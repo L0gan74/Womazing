@@ -1,0 +1,33 @@
+{
+  "name": "womazing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "server": "json-server -w server/db.json -p 3001"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.5",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@tanstack/react-query": "^4.32.0",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.17",
+    "@types/react-dom": "18.2.7",
+    "axios": "^1.4.0",
+    "json-server": "^0.17.3",
+    "next": "13.4.12",
+    "nodemailer": "^6.9.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.4",
+    "react-query": "^3.39.3",
+    "react-redux": "^8.1.2",
+    "swiper": "^10.2.0",
+    "typescript": "5.1.6"
+  }
+}

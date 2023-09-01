@@ -1,0 +1,131 @@
+.wrapper {
+  padding: 190px 0 130px 0;
+}
+
+.wrapper h1 {
+  padding-bottom: 26px;
+  color: #000;
+  font-size: 55px;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: 1.1px;
+}
+
+.panel {
+  color: #000;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.34px;
+  display: flex;
+  align-items: center;
+}
+
+.panel p {
+  color: #909090;
+  padding-left: 5px;
+}
+
+.about {
+  padding-top: 130px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 94px;
+  padding-bottom: 130px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 94px;
+}
+
+.text h3 {
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.5px;
+  padding-bottom: 10px;
+}
+
+.text p {
+  color: black;
+  padding-top: 36px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.34px;
+}
+
+.link {
+  background: #6e9c9f;
+  width: 243px;
+  height: 68px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 138.9%;
+  letter-spacing: 0.34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 130px auto 0 auto;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.link:hover {
+  background: #509498;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 40px 0 30px 0;
+  }
+  .about {
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper h1 {
+    font-size: 30px;
+    padding-bottom: 30px;
+  }
+  .top {
+    padding-bottom: 60px;
+  }
+  .top,
+  .bottom {
+    display: block;
+  }
+  .top img {
+    display: block;
+    width: 300px;
+    height: 100%;
+    margin: 0 auto 20px auto;
+  }
+  .text h3 {
+    text-align: center;
+  }
+  .text p {
+    padding-top: 20px;
+  }
+  .bottom img {
+    display: block;
+    width: 300px;
+    height: 100%;
+    margin: 20px auto 0 auto;
+  }
+  .link {
+    margin: 50px auto 0 auto;
+  }
+}

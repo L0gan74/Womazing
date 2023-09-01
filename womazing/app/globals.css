@@ -1,0 +1,91 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  position: relative;
+  display: block;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration-line: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+a:hover {
+  color: black;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+}
+
+.active {
+  color: #6e9c9f !important;
+}
+
+.activeBtn {
+  background: #000;
+  color: white !important;
+}
+
+.panel-header {
+  color: #000;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: 1.1px;
+  padding-bottom: 26px;
+}
+
+.panel {
+  color: #000;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.34px;
+  display: flex;
+  align-items: center;
+}
+
+.panel p {
+  color: #909090;
+  padding-left: 5px;
+}
+
+@media (max-width: 1100px) {
+  main {
+    padding: 0 15px;
+  }
+}

@@ -1,0 +1,164 @@
+.checkout {
+  padding: 196px 0 130px 0;
+}
+
+.wrapper {
+  padding-top: 200px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+.right {
+  width: 284px;
+}
+
+.form h3,
+.right h3 {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.5px;
+  color: #000;
+  padding-bottom: 35px;
+}
+
+.right h3 {
+  padding-left: 18px;
+}
+
+.form input {
+  display: block;
+  box-sizing: border-box;
+  width: 350px;
+  border: 0;
+  border-bottom: 1px solid black;
+  padding: 10px 15px 10px 0;
+  margin-bottom: 10px;
+  color: #868686;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.34px;
+  outline: none;
+  margin-bottom: 35px;
+}
+
+.error {
+  color: red;
+}
+
+.form input:disabled {
+  opacity: 0.4;
+}
+
+.form input[type="button"]:hover {
+  transition: 0.3s all;
+}
+
+.form button[type="submit"],
+.form input[type="button"],
+.form input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.item {
+  padding: 0 18px 30px 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product {
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.4px;
+}
+
+.form textarea {
+  width: 350px;
+  height: 134px;
+  color: #868686;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.34px;
+}
+
+.total {
+  padding: 14px 18px;
+  background: #f1eadc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total p {
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.4px;
+}
+
+.payment {
+  padding-top: 50px;
+}
+
+.payment button {
+  background: #6e9c9f;
+  width: 246px;
+  height: 68px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 138.9%;
+  letter-spacing: 0.34px;
+}
+
+.success {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+}
+
+.left span {
+  display: block;
+  padding-left: 32px;
+}
+
+.left h3 {
+  color: #000;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.5px;
+}
+
+.left p {
+  color: #000;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.34px;
+  padding-top: 20px;
+}
+
+.success a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6e9c9f;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 138.9%;
+  letter-spacing: 0.34px;
+  width: 272px;
+  height: 68px;
+  border: 1px solid #6e9c9f;
+}
