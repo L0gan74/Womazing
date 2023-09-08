@@ -4,15 +4,16 @@ import Link from "next/link";
 import React from "react";
 import main from "./main.module.css";
 
+//@ts-ignore
 const ProductItem: React.FC<IItemData> = ({ products = [], amount }) => {
   const list = products.filter((_, i) => i < amount);
 
   return (
     <>
-      {list.map(({ id, title,price }) => (
+      {list.map(({ id, title, price, images }) => (
         <Link key={id} href={`/pages/item/${id}`}>
           <div className={main.item}>
-            {/* <Image src={images} width={350} height={400} alt={title} /> */}
+            <Image src={images[0]} width={250} height={250} alt="img" />
             <h3>{title}</h3>
             <p>{price}</p>
           </div>

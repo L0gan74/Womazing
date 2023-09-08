@@ -19,7 +19,8 @@ const productsSlice = createSlice({
   name: "products",
   initialState: {
     list: [],
-    // related: [],
+    filtered: [],
+    related: [],
     isLoading: false,
   },
   extraReducers: (builder) => {

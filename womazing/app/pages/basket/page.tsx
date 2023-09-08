@@ -1,10 +1,15 @@
+"use client"
+
 import { NextPage } from "next";
 import React from "react";
 import style from "./style.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 const Basket: NextPage = () => {
+  const { cart } = useSelector(({ user }) => user);
+
   return (
     <div className={style.basket}>
       <h1 className="panel-header">Корзина</h1>
@@ -18,42 +23,33 @@ const Basket: NextPage = () => {
           <p>Количество</p>
           <p>Всего</p>
         </div>
-        <div className={style.item}>
-          <span className={style.first}>
-            <button type="button" className={style.close}>
-              <Image src="/close.svg" width={12} height={12} alt="close" />
-            </button>
-            <Image
-              className={style.image}
-              src="/about-bottom.png"
-              width={136}
-              height={205}
-              alt="imaage"
-            />
-            <p className={style.name}>Футболка USA</p>
-          </span>
-          <p className={style.price}>$129</p>
-          <span className={style.quantity}>1</span>
-          <p className={style.all}>$129</p>
-        </div>
-        <div className={style.item}>
-          <span className={style.first}>
-            <button type="button" className={style.close}>
-              <Image src="/close.svg" width={12} height={12} alt="close" />
-            </button>
-            <Image
-              className={style.image}
-              src="/about-bottom.png"
-              width={136}
-              height={205}
-              alt="imaage"
-            />
-            <p className={style.name}>Футболка USA</p>
-          </span>
-          <p className={style.price}>$129</p>
-          <span className={style.quantity}>1</span>
-          <p className={style.all}>$129</p>
-        </div>
+        {!cart.length ? (
+          <h1>Корзина пуста</h1>
+        ) : (
+
+
+          <div className={style.item}>
+            <h2>{item.price}</h2>
+            <span className={style.first}>
+              <button type="button" className={style.close}>
+                <Image src="/close.svg" width={12} height={12} alt="close" />
+              </button>
+              <Image
+                className={style.image}
+                src="/about-bottom.png"
+                width={136}
+                height={205}
+                alt="imaage"
+              />
+              <p className={style.name}>Футболка USA</p>
+            </span>
+            <p className={style.price}>$129</p>
+            <span className={style.quantity}>1</span>
+            <p className={style.all}>$129</p>
+          </div>
+    
+        )}
+
         <div className={style.bottom}>
           <div className={style.coupon}>
             <input type="text" placeholder="Введите купон" />

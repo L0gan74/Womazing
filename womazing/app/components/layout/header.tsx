@@ -14,6 +14,12 @@ import Button from "@mui/material/Button";
 
 import { useForm } from "react-hook-form";
 
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "@/app/store/hooks";
+import { toggleForm } from "@/app/store/user/user";
+
 const styleModal = {
   position: "absolute" as "absolute",
   top: "50%",
@@ -55,6 +61,33 @@ const Header: React.FC = () => {
     alert(JSON.stringify(data));
   };
 
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const openMenu = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+  };
+
+  const dispatch = useAppDispatch();
+  const { currentUser } = useSelector(({ user }) => user);
+
+  const [values, setValues] = React.useState({
+    name: "Гость",
+    avatar: "/avatar.jpg",
+  });
+
+  React.useEffect(() => {
+    if (!currentUser) return;
+
+    setValues(currentUser);
+  }, [currentUser]);
+
+  const handleClickForm = () => {
+    if (!currentUser) dispatch(toggleForm(true));
+  };
+
   return (
     <header className={style.header}>
       <Link href="/">
@@ -62,6 +95,14 @@ const Header: React.FC = () => {
       </Link>
       <nav className={style.nav}>
         <Navigation navLink={navLink} />
+        <button>{values.name}</button>
+        <Image
+          className={style.avatar}
+          src={values.avatar}
+          width={50}
+          height={50}
+          alt="avatar"
+        />
       </nav>
       <div className={style.right}>
         <Button onClick={handleOpen}>
@@ -78,7 +119,7 @@ const Header: React.FC = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0_46749_616)">
+            <g clipPath="url(#clip0_46749_616)">
               <path
                 d="M23.8454 8.2243C23.7281 8.10906 23.5642 8.05442 23.4012 8.07624H17.0343V5.26295C17.0343 2.4826 14.7804 0.228699 12.0001 0.228699C9.21971 0.228699 6.96582 2.4826 6.96582 5.26295V8.07624H0.598861C0.421164 8.07624 0.243523 8.07624 0.154646 8.2243C0.0352739 8.33902 -0.0201042 8.5051 0.00659291 8.66851L2.22761 20.81C2.53789 22.5037 4.00034 23.7431 5.72199 23.7713H18.278C20.0046 23.7289 21.464 22.4797 21.7724 20.7804L23.9934 8.66851C24.0201 8.5051 23.9648 8.33902 23.8454 8.2243ZM8.1503 5.26295C8.1503 3.13682 9.87388 1.41324 12 1.41324C14.1261 1.41324 15.8497 3.13682 15.8497 5.26295V8.07624H8.1503V5.26295ZM20.5879 20.6323C20.3884 21.7547 19.4179 22.5759 18.278 22.5868H5.72199C4.58212 22.5759 3.61161 21.7547 3.41215 20.6323L1.30959 9.26078H22.6904L20.5879 20.6323Z"
                 fill="black"
@@ -99,6 +140,32 @@ const Header: React.FC = () => {
             </defs>
           </svg>
         </Link>
+        <div>
+          <Button
+            className={style.burgermenu}
+            id="fade-button"
+            aria-controls={openMenu ? "fade-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={openMenu ? "true" : undefined}
+            onClick={handleClick}
+          >
+            Dashboard
+          </Button>
+          <Menu
+            id="fade-menu"
+            MenuListProps={{
+              "aria-labelledby": "fade-button",
+            }}
+            anchorEl={anchorEl}
+            open={openMenu}
+            onClose={handleCloseMenu}
+            TransitionComponent={Fade}
+          >
+            <MenuItem onClick={handleCloseMenu}>Profile</MenuItem>
+            <MenuItem onClick={handleCloseMenu}>My account</MenuItem>
+            <MenuItem onClick={handleCloseMenu}>Logout</MenuItem>
+          </Menu>
+        </div>
       </div>
       <Modal
         className={style.modal}
