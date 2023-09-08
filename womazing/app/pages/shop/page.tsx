@@ -3,7 +3,6 @@
 import React from "react";
 import style from "./style.module.css";
 import { NextPage } from "next";
-import Category from "./category";
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { setCategoryId } from "@/app/store/slices/filter";
 import axios from "axios";
@@ -11,6 +10,7 @@ import ProductItem from "@/app/components/main/item";
 import { RootData } from "@/interface/item.interface";
 import { getCategories } from "@/app/store/slices/categories";
 import { getProducts } from "@/app/store/slices/product";
+import Category from "./category";
 
 const ShopPages: NextPage = () => {
   const dispatch = useAppDispatch();
@@ -53,7 +53,7 @@ const ShopPages: NextPage = () => {
           <ProductItem item={item} key={id} />
         ))}
       </div> */}
-      <Category />
+      <Category/>
       <div className={style.container}>
         <ProductItem products={list} amount={10} />
       </div>
